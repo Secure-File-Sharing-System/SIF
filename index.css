@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4B5563 #1F2937;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #1F2937;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #4B5563;
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #6B7280;
+  }
+}
+
+@layer components {
+  /* Define a primary button style (for main actions) */
+  .btn-primary {
+    @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50;
+  }
+
+  /* Define a secondary/neutral button style */
+  .btn-secondary {
+    @apply px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-50;
+  }
+
+  /* Define a tertiary/ghost button style (for less prominent actions) */
+  .btn-ghost {
+     @apply px-3 py-1 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors disabled:opacity-50;
+  }
+
+  /* Define a consistent input field style */
+  .input-field {
+    @apply w-full p-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}

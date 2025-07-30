@@ -1,0 +1,72 @@
+/* App.css */
+
+/* Defines the main layout container for the application. 
+  Using flexbox ensures that the sidebar and main content area align correctly 
+  and the layout can adapt to different screen sizes.
+*/
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Styles for the main content area.
+  It takes up the remaining space and is set up for independent scrolling.
+  The transition ensures smooth resizing if the sidebar width changes.
+*/
+.main-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Keyframe animation for a subtle fade-in and slide-up effect.
+  This will be used for loading elements and page content to make the UI feel more polished.
+*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* A simple spinning animation for loading indicators.
+*/
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* A utility class to apply the fade-in animation to any element.
+   We will use this in our React components to animate page content.
+*/
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Responsive design adjustments for the sidebar.
+  On screens smaller than 1024px (tablets and mobiles), the sidebar will be
+  positioned off-screen and can be toggled into view.
+*/
+@media (max-width: 1023px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 50; /* Ensures sidebar is on top of content */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+}
