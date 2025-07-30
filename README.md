@@ -1,4 +1,4 @@
-Share-IT : Secure File Sharing System
+## Share-IT : Secure File Sharing System
 
 A secure and scalable full-stack web application that allows users to upload, store, and share files through time-bound and optionally password-protected links. The platform supports file metadata tracking and includes an admin dashboard for managing uploaded content.
 
